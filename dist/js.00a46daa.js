@@ -121,15 +121,26 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var txtnombre = document.querySelector("#txtnombre");
 var respondernombre = document.querySelector("#respondernombre");
 var txtgenero = document.querySelector("#txtgenero");
-txtnombre.addEventListener("input", function (event) {
+var txtedad = document.querySelector("#txtedad");
+txtnombre.addEventListener("keyup", function (event) {
   var sunombre = event.target.value;
-  respondernombre.innerHTML = "<p> Hola, como estas <span>" + sunombre + "</span> un gusto conocerte</p>";
   var genero = txtgenero.value;
+  var edad = parseInt(txtedad.value);
   respondernombre.style.display = "block";
-  if (genero == 'MASCULINO') {
-    respondernombre.innerHTML = "<p> Hola, Como estas Sr. <span>" + sunombre + "</span> un gusto conocerte</p>";
-  } else {
-    respondernombre.innerHTML = "<p> Hola, Como estas Srta. <span>" + sunombre + "</span> un gusto conocerte</p>";
+  if (!isNaN(edad)) {
+    if (edad > 30) {
+      if (genero === 'MASCULINO') {
+        respondernombre.innerHTML = "<p> Hola, Como estas Sr. <span>" + sunombre + "</span> un gusto conocerte</p>";
+      } else {
+        respondernombre.innerHTML = "<p> Hola, Como estas Sra. <span>" + sunombre + "</span> un gusto conocerte</p>";
+      }
+    } else {
+      if (genero === 'MASCULINO') {
+        respondernombre.innerHTML = "<p> Hola, Como estas Joven. <span>" + sunombre + "</span> un gusto conocerte</p>";
+      } else {
+        respondernombre.innerHTML = "<p> Hola, Como estas Srta. <span>" + sunombre + "</span> un gusto conocerte</p>";
+      }
+    }
   }
   txtgenero.addEventListener('click', function () {
     txtnombre.value = "";
@@ -161,7 +172,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52182" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52250" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
