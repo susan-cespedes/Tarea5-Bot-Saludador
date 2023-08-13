@@ -1,0 +1,24 @@
+{
+  "name": "tarea5-bot-saludador",
+  "version": "1.0.0",
+  "description": "Bot Saludador",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susan-cespedes/Tarea5-Bot-Saludador.git"
+  },
+  "author": "Susan Cespedes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/susan-cespedes/Tarea5-Bot-Saludador/issues"
+  },
+  "homepage": "https://github.com/susan-cespedes/Tarea5-Bot-Saludador#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
