@@ -122,23 +122,32 @@ var txtnombre = document.querySelector("#txtnombre");
 var respondernombre = document.querySelector("#respondernombre");
 var txtgenero = document.querySelector("#txtgenero");
 var txtedad = document.querySelector("#txtedad");
+var horaActual = new Date().getHours();
 txtnombre.addEventListener("keyup", function (event) {
   var sunombre = event.target.value;
   var genero = txtgenero.value;
   var edad = parseInt(txtedad.value);
   respondernombre.style.display = "block";
   if (!isNaN(edad)) {
+    var saludo = "";
+    if (horaActual >= 1 && horaActual < 12) {
+      saludo = "Buenos Dias";
+    } else if (horaActual >= 12 && horaActual < 18) {
+      saludo = "Buenas Tardes";
+    } else {
+      saludo = "Buenas noches";
+    }
     if (edad > 30) {
       if (genero === 'MASCULINO') {
-        respondernombre.innerHTML = "<p> Hola, Como estas Sr. <span>" + sunombre + "</span> un gusto conocerte</p>";
+        respondernombre.innerHTML = "<p> Hola, " + saludo + " Como estas Sr. <span>" + sunombre + "</span> un gusto conocerte</p>";
       } else {
-        respondernombre.innerHTML = "<p> Hola, Como estas Sra. <span>" + sunombre + "</span> un gusto conocerte</p>";
+        respondernombre.innerHTML = "<p> Hola, " + saludo + " Como estas Sra. <span>" + sunombre + "</span> un gusto conocerte</p>";
       }
     } else {
       if (genero === 'MASCULINO') {
-        respondernombre.innerHTML = "<p> Hola, Como estas Joven. <span>" + sunombre + "</span> un gusto conocerte</p>";
+        respondernombre.innerHTML = "<p> Hola, " + saludo + " Como estas Joven. <span>" + sunombre + "</span> un gusto conocerte</p>";
       } else {
-        respondernombre.innerHTML = "<p> Hola, Como estas Srta. <span>" + sunombre + "</span> un gusto conocerte</p>";
+        respondernombre.innerHTML = "<p> Hola, " + saludo + " Como estas Srta. <span>" + sunombre + "</span> un gusto conocerte</p>";
       }
     }
   }
@@ -172,7 +181,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52250" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52309" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
