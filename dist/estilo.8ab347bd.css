@@ -1,0 +1,24 @@
+h1{
+    font-weight: bold; /*negrita*/
+    color: rgb(169, 37, 189); /*color letra*/
+    font-size: 40px; /*tamaño letra*/
+    text-align: center; /*titulo en el centro*/
+    text-decoration:underline; /*linea subrayada abajo del titulo*/
+    text-decoration-style: wavy; /*estilo de la linea subrayada*/
+    text-decoration-color: rgb(0, 255, 191); /*color de la linea subrayada*/
+}
+
+#contenedor{
+    width: 90%; /*tamaño div*/
+    margin: auto; /*margenes automaticos*/
+    border: 5px dashed rgb(18, 175, 162); /*borde de mi div*/
+    padding: 25px; /*espacio entre borde externo e interno*/
+}
+
+#saludador{
+    font-weight: bold; /*negrita hola*/
+    color: rgb(238, 71, 199); /*color letra*/
+    font-size: 25px; /*tamaño letra*/
+}
+
+/*# sourceMappingURL=/estilo.8ab347bd.css.map */
