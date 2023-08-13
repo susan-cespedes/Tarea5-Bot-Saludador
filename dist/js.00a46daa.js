@@ -120,9 +120,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"js/index.js":[function(require,module,exports) {
 var txtnombre = document.querySelector("#txtnombre");
 var respondernombre = document.querySelector("#respondernombre");
+var txtgenero = document.querySelector("#txtgenero");
 txtnombre.addEventListener("input", function (event) {
   var sunombre = event.target.value;
   respondernombre.innerHTML = "<p> Hola, como estas <span>" + sunombre + "</span> un gusto conocerte</p>";
+  var genero = txtgenero.value;
+  respondernombre.style.display = "block";
+  if (genero == 'MASCULINO') {
+    respondernombre.innerHTML = "<p> Hola, Como estas Sr. <span>" + sunombre + "</span> un gusto conocerte</p>";
+  } else {
+    respondernombre.innerHTML = "<p> Hola, Como estas Srta. <span>" + sunombre + "</span> un gusto conocerte</p>";
+  }
+  txtgenero.addEventListener('click', function () {
+    txtnombre.value = "";
+    respondernombre.style.display = "none";
+  });
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -149,7 +161,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51973" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52182" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
