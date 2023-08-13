@@ -20,3 +20,14 @@ h1{
     color: rgb(238, 71, 199); /*color letra*/
     font-size: 25px; /*tamaño letra*/
 }
+
+.estilo-normal{
+    font-weight: bold; /*negrita hola*/
+    color: rgb(0, 0, 0); /*color letra*/
+    font-size: 25px; /*tamaño letra*/
+}
+
+span{
+    color: rgb(98, 0, 255);
+    text-transform: capitalize;
+}
