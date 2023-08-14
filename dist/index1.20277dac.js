@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/index.js":[function(require,module,exports) {
+})({"js/index1.js":[function(require,module,exports) {
 var txtnombre = document.querySelector("#txtnombre");
 var respondernombre = document.querySelector("#respondernombre");
 var txtgenero = document.querySelector("#txtgenero");
@@ -381,5 +381,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
-//# sourceMappingURL=/js.00a46daa.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index1.js"], null)
+//# sourceMappingURL=/index1.20277dac.js.map
